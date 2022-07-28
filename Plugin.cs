@@ -106,7 +106,7 @@ namespace ModdedMagnet
                         ReloadGuns();
                         ETGModConsole.Log("Modded item weight increase successfully reloaded.");
                     });
-                    ETGModConsole.CommandDescriptions.Add("modded_magnet reload", "Reloads the modded item and gun weight incrase, in case any item or gun was missed.");
+                    ETGModConsole.CommandDescriptions.Add("modded_magnet reload", "Reloads the modded item and gun weight increase, in case any item or gun was missed.");
                     mmgroup.AddUnit("stats", x =>
                     {
                         ETGModConsole.Log("Modded item weight multiplier: " + itemRarityIncrease.Value);
