@@ -173,7 +173,6 @@ namespace ModdedMagnet
                     {
                         objectsIRemovedForItems = objectsIRemovedForItems ?? new List<WeightedGameObject>();
                         objectsIRemovedForItems.Add(elem);
-                        GameManager.Instance.RewardManager.ItemsLootTable.defaultItemDrops.elements.Remove(elem);
                     }
                     else
                     {
@@ -181,6 +180,13 @@ namespace ModdedMagnet
                         objectsIEditedForItems.Add(elem);
                         elem.weight *= itemRarityIncrease.Value;
                     }
+                }
+            }
+            if (objectsIRemovedForItems != null)
+            {
+                foreach(var elem in objectsIRemovedForItems)
+                {
+                    GameManager.Instance.RewardManager.ItemsLootTable.defaultItemDrops.elements.Remove(elem);
                 }
             }
             oldItemWeight = itemRarityIncrease.Value;
@@ -223,7 +229,6 @@ namespace ModdedMagnet
                     {
                         objectsIRemovedForGuns = objectsIRemovedForGuns ?? new List<WeightedGameObject>();
                         objectsIRemovedForGuns.Add(elem);
-                        GameManager.Instance.RewardManager.GunsLootTable.defaultItemDrops.elements.Remove(elem);
                     }
                     else
                     {
@@ -231,6 +236,13 @@ namespace ModdedMagnet
                         objectsIEditedForGuns.Add(elem);
                         elem.weight *= gunRarityIncrease.Value;
                     }
+                }
+            }
+            if (objectsIRemovedForGuns != null)
+            {
+                foreach(var elem in objectsIRemovedForGuns)
+                {
+                    GameManager.Instance.RewardManager.GunsLootTable.defaultItemDrops.elements.Remove(elem);
                 }
             }
             oldGunWeight = gunRarityIncrease.Value;
